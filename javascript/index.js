@@ -48,13 +48,19 @@ getInstruction('mashedPotatoes', 0, (step0) => {
                   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step4}</li>`;
 
                     getInstruction('mashedPotatoes', 5, (step5) => {
-                      document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`;                      
+                      document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`;  
+                      
+                      //https://developer.mozilla.org/pt-BR/docs/Web/API/element/removeAttribute
+                      document.getElementById("mashedPotatoesImg").removeAttribute("hidden");                   
                     });
                 });
             });
         });
     });
 });
+
+
+
 
 
 
@@ -98,6 +104,9 @@ obtainInstruction('steak', 0)
                                   obtainInstruction('steak', 8)
                                     .then ( (step8) => {
                                       document.querySelector("#steak").innerHTML += `<li>${step8}</li>`
+
+                                      //https://developer.mozilla.org/pt-BR/docs/Web/API/element/removeAttribute
+                                      document.getElementById("steakImg").removeAttribute("hidden");
                                     })
                                 })
                              })
@@ -157,8 +166,11 @@ async function makeBroccoli() {
     await obtainInstruction('broccoli', 7) 
     .then ( (step7) => {
       document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`
+
+      //https://developer.mozilla.org/pt-BR/docs/Web/API/element/removeAttribute
+      document.getElementById("broccoliImg").removeAttribute("hidden");
     });   
-}
+};
 
 makeBroccoli()
 
